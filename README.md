@@ -2,7 +2,16 @@
 
 How well can four standard classifiers distinguish stars, galaxies, and quasars from telescope survey measurements? This Python project compares random forest, logistic regression, a linear support vector machine, and Gaussian naive Bayes on the same held-out observations from the Sloan Digital Sky Survey.
 
-On a run with 80,000 training observations and 20,000 held out, the random forest classified **19,512 of 20,000 objects correctly (97.56%)**. Its most common mistake was predicting a galaxy for a quasar: it did this for 247 of the 3,797 quasars in the test set.
+The random forest classified **19,512 of 20,000 held-out objects correctly (97.56%)**. Its most common mistake was predicting a galaxy for a quasar: it did this for 247 of the 3,797 quasars in the test set.
+
+| Model | Correct predictions out of 20,000 | Accuracy |
+| --- | ---: | ---: |
+| Random forest | 19,512 | 97.6% |
+| Linear support vector machine | 17,064 | 85.3% |
+| Logistic regression | 16,805 | 84.0% |
+| Gaussian naive Bayes | 13,438 | 67.2% |
+
+All four models trained on the same 80,000 observations. These results come from the command below with Python 3.12 and scikit-learn 1.9.1.
 
 ## Run the comparison
 
